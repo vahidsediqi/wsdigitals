@@ -40,3 +40,12 @@ header nav{position:relative;background:#fff;backdrop-filter:none;-webkit-backdr
 .links{z-index:2;top:calc(100% + 8px);left:0;right:0;background:#fff;max-height:calc(100dvh - 110px);overflow-y:auto}
 .hero{padding-top:32px}
 }
+
+/* One continuous hero backdrop, including the space around navigation. */
+body{position:relative;isolation:isolate;background:#f6f7fb}
+body::before{content:'';position:absolute;z-index:-1;pointer-events:none;top:0;left:0;right:0;height:950px;background:radial-gradient(ellipse at 0 20%,#b9a4fb55,transparent 50%),radial-gradient(ellipse at 100% 35%,#95ddf755,transparent 50%),radial-gradient(ellipse at 55% 100%,#ffe3aa33,transparent 45%),linear-gradient(#0b153008 1px,transparent 1px),linear-gradient(90deg,#0b153008 1px,transparent 1px);background-size:auto,auto,auto,56px 56px,56px 56px;mask-image:linear-gradient(#000 0%,#000 65%,transparent 100%);-webkit-mask-image:linear-gradient(#000 0%,#000 65%,transparent 100%)}
+header{background:transparent}
+header nav{background:#fff}
+.hero,.servicehero{background:transparent}
+.hero::before{display:none}
+@media(max-width:760px){header{background:transparent}body::before{height:1150px}}
